@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input, button, textarea {
+  letter-spacing: 0.5px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body.dark {
+  background-color: hsl(209deg, 23%, 22%);
+}
+
+body {
+  max-width: 1388px;
+  margin: auto;
+  background-color: hsl(0deg, 0%, 98%);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+body header {
+  padding: 0px 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(0deg, 0%, 100%);
+  height: 3.5rem;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+body header h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+body header button {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.country-page {
+  height: 90vh;
+}
+.country-page button {
+  border: none;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 4px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 3.5rem;
+}
+.country-page .country-container {
+  padding: 0px 3.5rem;
+  min-height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.country-page .country-container img {
+  width: 45%;
+}
+.country-page .country-container .country-data {
+  width: 50%;
+}
+.country-page .country-container .country-data .infos {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 10rem;
+  margin: 2rem 0;
+}
+.country-page .country-container .country-data p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.3rem;
+  color: hsl(207deg, 26%, 17%);
+  font-weight: 700;
+  font-size: 14px;
+}
+.country-page .country-container .country-data p span {
+  font-weight: 500;
+}
+.country-page .country-container .country-data .border-countries {
+  margin: 2rem 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 90%;
+}
+.country-page .country-container .country-data .border-countries p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.country-page .country-container .country-data .border-countries p span {
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0;
+  margin-left: 0.4rem;
+  border-radius: 2px;
+  font-size: 10px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+.content .panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 4rem;
+  height: 10rem;
+}
+.content .panel .search-box, .content .panel .filter-box {
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.content .panel .search-box i, .content .panel .filter-box i {
+  color: hsl(0deg, 0%, 52%);
+}
+.content .panel .search-box input, .content .panel .search-box select, .content .panel .filter-box input, .content .panel .filter-box select {
+  border: none;
+  background: none;
+  width: 24rem;
+  outline: none;
+}
+.content .panel .search-box select, .content .panel .filter-box select {
+  width: 10rem;
+}
+.content main {
+  padding: 0px 4rem;
+  display: flex;
+  gap: 4.9rem;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=Content.css.map */

@@ -1,0 +1,41 @@
+@use '../../global.scss' as global;
+
+.country-card {
+    background-color: global.$white;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 6px;
+    width: 16rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    .country-image {
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        flex-basis: 45%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .country-info {;
+        padding: 1rem 1.5rem;
+        color: global.$veryDarkBlue;
+        h3 {
+            margin: 1rem 0;
+            font-size: 1rem;
+            font-weight: 900;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 700;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}
+

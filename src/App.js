@@ -1,25 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Content } from './Components/Content'
+import { CountryCard } from './Components/CountryCard';
+import './global.css'
 
-function App() {
+
+
+export default function App() {
+  const toggleTheme = e => {
+
+  }
+  const countryInfo = e => setAppState(['teste']);
+  const [appState, setAppState] = useState([]);
+
+  const backToHome = () => {
+    window.location.reload();
+    return false;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    appState.length !== 0?
+    <div>
+        <header>
+        <h2>Where in the world?</h2>
+        <div className='theme-switcher'>
+          <button onClick={countryInfo}><i class="fa-solid fa-moon"></i> Dark Mode</button>
+        </div>
       </header>
+      <div className='country-page'>
+        <button className='back-button' onClick={backToHome}><i class="fa-solid fa-arrow-left-long"></i> Back</button>
+        <div className='country-container'>
+          <img src={appState[0].flags.svg} alt="" />
+          <div className='country-data' >
+            <h2>{appState[0].name}</h2>
+            <div class="infos">
+              <p>Native Name: <span>{appState[0].nativeName}</span></p>
+              <p>Population: <span>{(appState[0].population).toLocaleString()}</span></p>
+              <p>Region: <span>{appState[0].region}</span></p>
+              <p>Sub Region: <span>{appState[0].subregion}</span></p>
+              <p>Capital: <span>{appState[0].capital}</span></p>
+              <p>Top Level Domain: <span>{appState[0].topLevelDomain.join(', ')}</span></p>
+              <p>Currencies: <span>
+                {appState[0].currencies.reduce((acc, curr) => {
+                  acc.push(curr.name);
+                  return acc;
+                }, []).join(', ')}
+              </span></p>
+              <p>Languages: <span>
+                {appState[0].languages.reduce((acc, curr) => {
+                  acc.push(curr.name);
+                  return acc;
+                }, []).join(', ')}
+              </span></p>
+            </div>
+            <div className='border-countries'>
+            <p>Border Countries:
+              {
+                appState[0].borders ?
+                appState[0].borders.map( borderCountry => <span className='border-country'>{borderCountry}</span>) :
+                null
+                }
+              </p>
+          </div>
+          </div>
+          
+        </div>
+      </div>
     </div>
-  );
+     : 
+    <div>
+        <header>
+        <h2>Where in the world?</h2>
+        <div className='theme-switcher'>
+          <button onClick={countryInfo}><i class="fa-solid fa-moon"></i> Dark Mode</button>
+        </div>
+      </header>
+      <Content setCountryPage={setAppState} />
+    </div>
+  )
+
 }
 
-export default App;
+
