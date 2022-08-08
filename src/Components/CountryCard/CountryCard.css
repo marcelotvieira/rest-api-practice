@@ -10,6 +10,30 @@ body, input, button, textarea {
 }
 
 body.dark {
+  background-color: hsl(207deg, 26%, 17%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .search-box, body.dark .filter-box {
+  background-color: hsl(209deg, 23%, 22%) !important;
+}
+body.dark .search-box input, body.dark .search-box select, body.dark .filter-box input, body.dark .filter-box select {
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .search-box input:active, body.dark .search-box select:active, body.dark .filter-box input:active, body.dark .filter-box select:active {
+  background-color: hsl(209deg, 23%, 22%);
+}
+body.dark .content main div {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .country-page button {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .country-page .country-container .country-data h2, body.dark .country-page .country-container .country-data p {
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .country-page .country-container .country-data .border-countries span {
   background-color: hsl(209deg, 23%, 22%);
 }
 
@@ -31,6 +55,7 @@ body header {
 body header h2 {
   font-weight: 700;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 body header button {
   background: none;
@@ -116,6 +141,7 @@ body header button {
   height: 20rem;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .country-card .country-image {
   align-items: center;

@@ -26,6 +26,16 @@ body.dark .content main div {
   background-color: hsl(209deg, 23%, 22%);
   color: hsl(0deg, 0%, 100%);
 }
+body.dark .country-page button {
+  background-color: hsl(209deg, 23%, 22%);
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .country-page .country-container .country-data h2, body.dark .country-page .country-container .country-data p {
+  color: hsl(0deg, 0%, 100%);
+}
+body.dark .country-page .country-container .country-data .border-countries span {
+  background-color: hsl(209deg, 23%, 22%);
+}
 
 body {
   max-width: 1388px;

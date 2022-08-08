@@ -5,7 +5,6 @@ export function CountryCard( { country, setCountryFunction } ) {
     const { name, flags, population, region, capital } = country;
 
     const countryPage = e => {
-      console.log(setCountryFunction);
       setCountryFunction([country]);
     }
   return (

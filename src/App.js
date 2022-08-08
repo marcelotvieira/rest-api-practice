@@ -16,8 +16,7 @@ export default function App() {
   const [appState, setAppState] = useState([]);
 
   const backToHome = () => {
-    window.location.reload();
-    return false;
+    setAppState([])
   }
   return (
     appState.length !== 0?
@@ -64,11 +63,13 @@ export default function App() {
         </div>
       </div>
     </div>
-     : 
+     : appState.length === 0 ? 
     <div>
         <Header theme='' setTheme={toggleTheme} />
       <Content setCountryPage={setAppState} />
     </div>
+    :
+    null
   )
 
 }
