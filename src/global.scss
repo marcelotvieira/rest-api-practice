@@ -17,7 +17,45 @@ body, input, button, textarea {
 }
 
 body.dark {
-    background-color: $darkBlue;
+    background-color: $veryDarkBlue;
+    color: $white;
+    .search-box, .filter-box {
+        background-color: $darkBlue!important;
+        input, select {
+            color: $white;
+            &:active {
+                background-color: $darkBlue;
+            }
+        }
+    }
+    .content {
+        main {
+            div {
+                background-color: $darkBlue;
+                color: $white;
+
+            }
+        }
+    }
+    .country-page {
+        button {
+            background-color: $darkBlue;
+            color: $white;
+        }
+        .country-container {
+            .country-data {
+                h2, p {
+                    color: $white;
+                }
+                .border-countries {
+                    span {
+                        background-color: $darkBlue;
+                    }
+                }
+            }
+        }
+    }
+
 }
 body {
     max-width: 1388px;

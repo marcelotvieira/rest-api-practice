@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { Content } from './Components/Content'
 import { CountryCard } from './Components/CountryCard';
+import { Header } from './Components/Header';
 import './global.css'
 
 
 
 export default function App() {
-  const toggleTheme = e => {
 
+  const toggleTheme = e => {
+    document.body.classList.toggle('dark');
+    e.target.parentElement.parentElement.classList.toggle('dark');
   }
   const countryInfo = e => setAppState(['teste']);
   const [appState, setAppState] = useState([]);
@@ -19,12 +22,8 @@ export default function App() {
   return (
     appState.length !== 0?
     <div>
-        <header>
-        <h2>Where in the world?</h2>
-        <div className='theme-switcher'>
-          <button onClick={countryInfo}><i class="fa-solid fa-moon"></i> Dark Mode</button>
-        </div>
-      </header>
+        <Header theme='' setTheme={toggleTheme} />
+
       <div className='country-page'>
         <button className='back-button' onClick={backToHome}><i class="fa-solid fa-arrow-left-long"></i> Back</button>
         <div className='country-container'>
@@ -67,12 +66,7 @@ export default function App() {
     </div>
      : 
     <div>
-        <header>
-        <h2>Where in the world?</h2>
-        <div className='theme-switcher'>
-          <button onClick={countryInfo}><i class="fa-solid fa-moon"></i> Dark Mode</button>
-        </div>
-      </header>
+        <Header theme='' setTheme={toggleTheme} />
       <Content setCountryPage={setAppState} />
     </div>
   )

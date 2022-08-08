@@ -140,6 +140,7 @@ body header button {
   font-weight: 900;
 }
 .country-card .country-info p {
+  margin: 0.5rem 0;
   font-size: 14px;
   font-weight: 700;
 }
