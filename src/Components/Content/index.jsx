@@ -27,10 +27,16 @@ const defaultContent = ['DEU','USA','BRA','ISL','AFG','ALA','ALB','DZA',];
     const baseUrl = 'https://restcountries.com/v2/name/';
     const search = (e.target.search.value).toLowerCase();
     try {
-      const response = await fetch(baseUrl+search)
-      setcountries(await response.json());
+      const response = await fetch(baseUrl+search);
+      const parsed = await response.json();
+      if (parsed.status === 404) {
+        throw new Error('Not found');
+      }
+      setcountries(parsed);
     } catch (error) {
-      console.log(`Não encontrado!`)
+      e.target.search.value = '';
+      e.target.search.placeholder = 'Not found!';
+      return(error.mesage)
     }
   }
 
@@ -43,7 +49,7 @@ const defaultContent = ['DEU','USA','BRA','ISL','AFG','ALA','ALB','DZA',];
       const response = await fetch(url);
       const parsed = await response.json();
       if (parsed.length === 1) {
-        setcountries(parsed);
+        setcountries(await parsed);
         return;
       }
       const defaultObj = parsed.filter( country => {
